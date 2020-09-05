@@ -1,0 +1,41 @@
+<app-header [title]="title" [subtitle]="subtitle" [isAuth]="isAuth" [username]="username" (arrived)="hasArrived($event)"></app-header>
+
+<!-- @Output() from header component event -->
+<p>{{ arrived }}</p>
+
+<div class="row">
+    <div *ngFor="let cupcake of cupcakes" class="column">
+        <img class="item-img" [src]="cupcake.imgSrc" [alt]="cupcake.altText"/>
+        <p class="item-title">{{ cupcake.type }}</p>
+        <span class="item-price">{{ cupcake.price | currency }}</span>&nbsp;
+        <button type="button" (click)="popup = true">Add to cart</button>
+    </div>
+</div>
+<!-- array of objects with pipe for price -->
+
+
+<div class="row">
+    <div *ngFor="let donut of donuts" class="column">
+        <img class="item-img" [src]="donut.imgSrc" [alt]="donut.altText"/>
+        <p class="item-title">{{ donut.type }}</p>
+        <span class="item-price">{{ donut.price | currency }}</span>&nbsp;
+        <button type="button" (click)="popup = true">Add to cart</button>
+    </div>
+</div>
+<!-- array of objects with pipe for price -->
+
+<div class="overlay" *ngIf="popup">
+	<div class="popup">
+		<h2>Item added to cart</h2>
+		<a class="close" (click)="popup = false">&times;</a>
+		<button class="content">
+            continue to checkout
+        </button>
+	</div>
+</div>
+
+<app-footer [phone]="phone" [email]="email" [copyright]="copyright"></app-footer>
+
+
+
+
