@@ -32,6 +32,5 @@ export class HeaderComponent implements OnInit {
     this.arrived.emit('Your featured items:');
   }
 
-  navs: string[] = ['home', 'products', 'about']
-
+  navs: string[] = ['home', 'products', 'about', 'account']
 }
