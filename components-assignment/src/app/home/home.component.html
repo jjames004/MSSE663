@@ -1,7 +1,9 @@
 <app-header [title]="title" [subtitle]="subtitle" [isAuth]="isAuth" [username]="username" (arrived)="hasArrived($event)"></app-header>
 
 <!-- @Output() from header component event -->
+<h1>Shop Today!</h1>
 <p>{{ arrived }}</p>
+
 
 <div class="row">
     <div *ngFor="let cupcake of cupcakes" class="column">
